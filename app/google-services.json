@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "206327391027",
+    "firebase_url": "https://komsipkl-b67b3.firebaseio.com",
+    "project_id": "komsipkl-b67b3",
+    "storage_bucket": "komsipkl-b67b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206327391027:android:ce8f5265cb290d77",
+        "android_client_info": {
+          "package_name": "com.komsi.komsipkl"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206327391027-sv0a35k5co6tl3l9fjjop1ako38asbbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2Ma1M8Zlz0EPnvTfuKxMvSmYLuPPQswA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

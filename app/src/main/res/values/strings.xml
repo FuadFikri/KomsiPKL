@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KomsiPKL</string>
+    <string name="minimum_password">Password terlalu pendek</string>
+    <string name="auth_failed">login gagal</string>
+    <string name="LoginActivity">LoginActivity</string>
+    <string name="SignupActivity">SignupActivity</string>
+</resources>
