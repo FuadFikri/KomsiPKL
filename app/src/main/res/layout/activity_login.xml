@@ -67,6 +67,7 @@
             android:textStyle="bold"
             android:background="#3D283D"
             android:fontFamily="casual"
+            android:onClick="clickDaftar"
             android:text="Daftar"
             />
 

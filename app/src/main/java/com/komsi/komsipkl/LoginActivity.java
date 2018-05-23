@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -30,10 +31,22 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            finish();
+            String email = user.getEmail();
+            if (email=="dosen@gmail.com"){
+                Intent intent = new Intent(LoginActivity.this, MainDosenActivity.class);
+                startActivity(intent);
+                finish();
+            }else if (email=="mahasiswa@gmail.com"){
+                Intent intent = new Intent(LoginActivity.this, MainMahasiswaActivity.class);
+                startActivity(intent);
+                finish();
+            } else if (email=="supervisor@gmail.com"){
+                Intent intent = new Intent(LoginActivity.this, MainSupervisorActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
 
         // set the view now
@@ -51,13 +64,13 @@ public class LoginActivity extends AppCompatActivity {
 
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
-
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
-            }
-        });
+//
+//        btnSignup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+//            }
+//        });
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -95,9 +108,24 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                    String email = user.getEmail();
+                                    if (email=="dosen@gmail.com"){
+                                        Intent intent = new Intent(LoginActivity.this, MainDosenActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }else if (email=="mahasiswa@gmail.com"){
+                                        Intent intent = new Intent(LoginActivity.this, MainMahasiswaActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else if (email=="supervisor@gmail.com"){
+                                        Intent intent = new Intent(LoginActivity.this, MainSupervisorActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+
                                 }
                             }
                         });
@@ -106,8 +134,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-//    public void clickDaftar(View view) {
-//        Intent intent = new Intent(this, SignupActivity.class);
-//        startActivity(intent);
-//    }
+    public void clickDaftar(View view) {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
 }
